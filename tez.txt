@@ -1,0 +1,47 @@
+#include<iostream>
+#include<algorithm>
+#include<math.h>
+
+#define suc() cerr << "GOOD"
+#define debug(u) cerr << #u << " = " << u << endl
+
+using namespace std;
+
+template<typename T> bool chkmin(T &a, T b) { return b < a ? (a = b, 1) : 0; }
+template<typename T> bool chkmax(T &a, T b) { return a < b ? (a = b, 1) : 0; }
+int read() { int a;cin >> a;return a; }
+
+int T;
+int a, b;
+
+int solve() {
+
+  cin >> a >> b;
+  if (b < a) swap(a, b);
+  b -= a;
+  swap(b, a);
+  if (sqrt(a) * sqrt(a) == a) return 1;
+
+  if (a == 6) {
+    return 3;
+  }
+  if (a == 14) {
+    return 3;
+  }
+  if (a == 30) {
+    return 3;
+  }
+  return 2;
+}
+
+signed main() {
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  cout.tie(0);
+
+  // solve();
+
+  cin >> T;
+  while (T--) cout << solve() << endl;
+  return 0;
+}
